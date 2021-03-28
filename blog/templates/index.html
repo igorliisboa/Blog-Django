@@ -1,0 +1,20 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{% static 'css/style.css' %}'>
+    <title>Document</title>
+</head>
+<body>
+    {% for post in posts %}
+        <h1>{{ post.title }}</h1>
+        <strong>{{ post.summary|safe}}</strong>
+        {{ post.created_at|date:'d, M Y'}}
+        {{ post.content|safe}}
+        <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro repellat expedita esse autem praesentium dolores necessitatibus at doloribus culpa molestias, facere atque harum facilis corporis suscipit voluptas rem impedit vero. Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam veniam deserunt cum eveniet dolores aspernatur repudiandae qui amet, ea voluptates quibusdam deleniti dolorem laboriosam accusamus cupiditate odio quae? Pariatur, qui?</h3>
+    {% endfor %}
+</body>
+</html>
